@@ -82,7 +82,6 @@ def create_calculator_frame(app, imcHistory):
 
 def create_diets_frame(app):
     frame = ctk.CTkFrame(app)
-
     label = ctk.CTkLabel(frame, text="Sugerencia de Dietas", font=("Helvetica", 16))
     label.pack(pady=10)
 
@@ -93,16 +92,13 @@ def create_diets_frame(app):
         "- Sobrepeso → menos azúcares y frituras, más fibra.\n"
         "- Obesidad → plan bajo en calorías y supervisado por nutricionista."
     )
-
     suggestion = ctk.CTkLabel(frame, text=texto, font=("Helvetica", 14), justify="left")
     suggestion.pack(pady=20)
-
     return frame
 
 
 def create_routines_frame(app):
     frame = ctk.CTkFrame(app)
-
     label = ctk.CTkLabel(frame, text="Rutinas según edad y género", font=("Helvetica", 16))
     label.pack(pady=10)
 
@@ -113,16 +109,13 @@ def create_routines_frame(app):
         "- Adultos mayores → caminata ligera 10-15 min diarios.\n"
         "- Mujeres embarazadas → yoga suave y estiramientos."
     )
-
     routine = ctk.CTkLabel(frame, text=texto, font=("Helvetica", 14), justify="left")
     routine.pack(pady=20)
-
     return frame
 
 
 def create_conditions_frame(app):
     frame = ctk.CTkFrame(app)
-
     label = ctk.CTkLabel(frame, text="Condiciones Físicas", font=("Helvetica", 16))
     label.pack(pady=10)
 
@@ -133,16 +126,13 @@ def create_conditions_frame(app):
         "- Problemas cardiacos → actividad ligera bajo supervisión médica.\n"
         "- Lesiones → ejercicios de bajo impacto (yoga, estiramientos)."
     )
-
     cond = ctk.CTkLabel(frame, text=texto, font=("Helvetica", 14), justify="left")
     cond.pack(pady=20)
-
     return frame
 
 
 def create_users_frame(app, users):
     frame = ctk.CTkFrame(app)
-
     label = ctk.CTkLabel(frame, text="Gestión de Usuarios", font=("Helvetica", 16))
     label.pack(pady=10)
 
@@ -183,7 +173,6 @@ def create_users_frame(app, users):
 
 def create_history_frame(app, imcHistory):
     frame = ctk.CTkFrame(app)
-
     label = ctk.CTkLabel(frame, text="Historial de IMC", font=("Helvetica", 16))
     label.pack(pady=10)
 
@@ -205,13 +194,12 @@ def create_history_frame(app, imcHistory):
 
     buttonLoad = ctk.CTkButton(frame, text="Cargar historial", command=load_history)
     buttonLoad.pack(pady=10)
-
     return frame
 
 
 # ------------------ Clase principal ------------------
 class SmithStrongApp:
-    def _init_(self):
+    def __init__(self):
         self.app = ctk.CTk()
         self.app.title("Smith Strong")
         self.app.geometry("700x750")
@@ -262,6 +250,6 @@ class SmithStrongApp:
 
 
 # ------------------ Ejecutar ------------------
-if _name_ == "_main_":
+if __name__ == "__main__":
     app = SmithStrongApp()
     app.run()
